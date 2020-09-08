@@ -1,5 +1,6 @@
 const {credentials} = require('./config');
 
+// Initialize the database connections
 const mongoose = require('mongoose');
 const connectionString = credentials.mongo.connectionString;
 if(!connectionString) {
@@ -13,3 +14,4 @@ db.on('error', err => {
   process.exit(1);
 });
 db.once('open', () => console.log("\nConnection established"));
+
